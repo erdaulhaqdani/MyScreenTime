@@ -6,53 +6,85 @@
     android:layout_height="match_parent"
     tools:context="id.ac.id.telkomuniversity.tass.myscreentime.MainActivity">
 
-    <EditText
-        android:id="@+id/edit_text_input"
-        android:layout_width="120dp"
+    <TextView
+        android:id="@+id/text_view_countdown"
+        android:layout_width="153dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/text_view_countdown"
-        android:layout_centerHorizontal="true"
-        android:hint="Minutes"
-        android:inputType="number"
-        android:maxLength="4"
-        android:minHeight="48dp"
-        android:importantForAutofill="no" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="128dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginBottom="305dp"
+        android:text="00:00"
+        android:textColor="@android:color/black"
+        android:textSize="60sp" />
+
+    <TextView
+        android:id="@+id/text_view_reminder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edit_text_input"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="129dp"
+        android:layout_marginEnd="117dp"
+        android:layout_marginBottom="29dp"
+        android:fontFamily="sans-serif"
+        android:text="REMINDER"
+        android:textColor="#000000"
+        android:textSize="32dp" />
 
     <Button
         android:id="@+id/button_set"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/edit_text_input"
-        android:layout_toEndOf="@+id/edit_text_input"
+        android:layout_above="@+id/text_view_countdown"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="232dp"
+        android:layout_marginBottom="28dp"
         android:text="Set" />
-
-    <TextView
-        android:id="@+id/text_view_countdown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="00:00"
-        android:textColor="@android:color/black"
-        android:textSize="60sp" />
 
     <Button
         android:id="@+id/button_start_pause"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/text_view_countdown"
-        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@+id/text_view_countdown"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="162dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="161dp"
         android:text="start" />
 
     <Button
         android:id="@+id/button_reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/text_view_countdown"
-        android:layout_marginStart="11dp"
-        android:layout_toEndOf="@+id/button_start_pause"
+        android:layout_alignTop="@+id/text_view_countdown"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="163dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="177dp"
         android:text="reset"
         android:visibility="invisible"
         tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/edit_text_input"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/text_view_countdown"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="188dp"
+        android:layout_marginBottom="26dp"
+        android:hint="Minutes"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:maxLength="4"
+        android:minHeight="48dp" />
 
 </RelativeLayout>
