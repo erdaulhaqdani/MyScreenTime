@@ -87,6 +87,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startTimer() {
+        String judul = "MATA ANDA PERLU ISTIRAHAT!";
+        String pesan = "JAGA KESEHATAN MATA ANDA!";
+
+        alarmNotif notif = new alarmNotif();
+        notif.sendNotif(judul, pesan, this);
+
         mEndTime = System.currentTimeMillis() + mTimeLeftInMillis;
 
         mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
@@ -186,6 +192,7 @@ public class MainActivity extends AppCompatActivity {
         if (mCountDownTimer != null) {
             mCountDownTimer.cancel();
         }
+
     }
 
     @Override
