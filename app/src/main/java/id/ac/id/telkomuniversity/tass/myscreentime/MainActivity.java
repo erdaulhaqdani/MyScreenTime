@@ -87,11 +87,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startTimer() {
-        String judul = "MATA ANDA PERLU ISTIRAHAT!";
-        String pesan = "JAGA KESEHATAN MATA ANDA!";
-
-        alarmNotif notif = new alarmNotif();
-        notif.sendNotif(judul, pesan, this);
 
         mEndTime = System.currentTimeMillis() + mTimeLeftInMillis;
 
@@ -106,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
             public void onFinish() {
                 mTimerRunning = false;
                 updateWatchInterface();
+
             }
         }.start();
 
@@ -155,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
 
             if (mTimeLeftInMillis < 1000) {
                 mButtonStartPause.setVisibility(View.INVISIBLE);
+                notificationAlert();
             } else {
                 mButtonStartPause.setVisibility(View.VISIBLE);
             }
@@ -165,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
                 mButtonReset.setVisibility(View.INVISIBLE);
             }
         }
+
     }
 
     private void closeKeyboard() {
@@ -173,6 +171,14 @@ public class MainActivity extends AppCompatActivity {
             InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
+    }
+
+    private void notificationAlert(){
+        String judul = "MATA ANDA PERLU ISTIRAHAT!";
+        String pesan = "JAGA KESEHATAN MATA ANDA!";
+
+        alarmNotif notif = new alarmNotif();
+        notif.sendNotif(judul, pesan, this);
     }
 
     @Override

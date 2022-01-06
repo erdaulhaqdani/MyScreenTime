@@ -25,10 +25,10 @@ public class alarmNotif {
                 .setLargeIcon(BitmapFactory.decodeResource(Resources.getSystem(),R.drawable.ic_baseline_hourglass_empty_24))
                 .setContentTitle(judul)
                 .setContentText(pesan)
-                .setAutoCancel(true);
+                .setPriority(NotificationCompat.PRIORITY_HIGH);
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            NotificationChannel channel = new NotificationChannel(chID, chName, NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationChannel channel = new NotificationChannel(chID, chName, NotificationManager.IMPORTANCE_HIGH);
             channel.setDescription(chName);
             builder.setChannelId(chID);
                     if(notificationManager != null){
