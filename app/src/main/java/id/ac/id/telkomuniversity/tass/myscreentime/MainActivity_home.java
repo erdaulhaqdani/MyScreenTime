@@ -16,7 +16,6 @@ public class MainActivity_home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_home);
 
-
         screentime = findViewById(R.id.screen_time);
         reminder = findViewById(R.id.reminder);
 
@@ -28,6 +27,13 @@ public class MainActivity_home extends AppCompatActivity {
             }
         });
 
+        screentime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent k = new Intent(MainActivity_home.this, ScreenActivity.class);
+                startActivity(k);
+            }
+        });
 
     }
 }

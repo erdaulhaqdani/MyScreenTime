@@ -14,7 +14,6 @@ public class ScreenActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_st);
 
         mHasilST=findViewById(R.id.textViewHasilST);
