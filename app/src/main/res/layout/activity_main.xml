@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="id.ac.id.telkomuniversity.tass.myscreentime.MainActivity">
@@ -10,81 +11,78 @@
         android:id="@+id/text_view_countdown"
         android:layout_width="153dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="128dp"
-        android:layout_marginEnd="128dp"
         android:layout_marginBottom="305dp"
         android:text="00:00"
         android:textColor="@android:color/black"
-        android:textSize="60sp" />
+        android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/text_view_reminder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/edit_text_input"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="129dp"
-        android:layout_marginEnd="117dp"
         android:layout_marginBottom="29dp"
         android:fontFamily="sans-serif"
         android:text="REMINDER"
         android:textColor="#000000"
-        android:textSize="32dp" />
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/edit_text_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button_set"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/text_view_countdown"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="232dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginEnd="95dp"
         android:layout_marginBottom="28dp"
-        android:text="Set" />
+        android:text="Set"
+        app:layout_constraintBottom_toTopOf="@+id/text_view_countdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/edit_text_input" />
 
     <Button
         android:id="@+id/button_start_pause"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/text_view_countdown"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="162dp"
         android:layout_marginTop="104dp"
-        android:layout_marginEnd="161dp"
-        android:text="start" />
+        android:text="start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/text_view_countdown" />
 
     <Button
         android:id="@+id/button_reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/text_view_countdown"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="163dp"
         android:layout_marginTop="160dp"
-        android:layout_marginEnd="160dp"
         android:layout_marginBottom="177dp"
         android:text="reset"
         android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/text_view_countdown"
+        app:layout_constraintVertical_bias="1.0"
         tools:visibility="visible" />
 
     <EditText
         android:id="@+id/edit_text_input"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/text_view_countdown"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="188dp"
-        android:layout_marginBottom="26dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginEnd="7dp"
         android:hint="Minutes"
         android:importantForAutofill="no"
         android:inputType="number"
         android:maxLength="4"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button_set"
+        app:layout_constraintEnd_toStartOf="@+id/button_set"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextContrastCheck" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
